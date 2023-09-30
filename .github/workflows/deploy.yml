@@ -42,7 +42,7 @@ jobs:
           git config --global user.name $GIT_USER
           git config --global user.email $GIT_EMAIL
           mkdir -p ../public
-          cp -rf public/CNAME ../public
+          cp -rf public/* ../public
 
       - name: Install dependencies
         run: |
