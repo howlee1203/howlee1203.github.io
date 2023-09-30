@@ -115,3 +115,13 @@ Githug Page页面相对简单，主要注意两点：
       - 打时间戳，切临时分支
       - 清空当前目录并复制目录`../public`内容
       - 提交修改，并合入`release`分支
+
+## 关于Google Site
+
+考虑到个人blog的封闭性，有必要让google能够search到相关字段，从而广而告之。
+这里我主要参考[这篇博客](https://saowu.top/blog/4tCVcic30/)，主要分三步：
+1. 搜索资源提交：下载对应的html文件，上传到`master`分支的public目录下
+2. 添加站点地图：下载对应的xml文件，上传到`master`分支的public目录下
+3. 在 Google Search console 中添加你的 sitemap URL
+
+然后过一天后再验证google收录情况：`site:https://xxxx.github.io`即可。
