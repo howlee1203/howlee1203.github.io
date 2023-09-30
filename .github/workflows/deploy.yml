@@ -6,7 +6,6 @@ on:
     branches:
       - master
       - develop
-      - tmp
 
 env:
   GIT_USER: github
@@ -42,35 +41,34 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name $GIT_USER
           git config --global user.email $GIT_EMAIL
-          # cp _config.fluid.yml themes/concise/_config.yml
-
-          mkdir -p public
-          git worktree add docs $DEPLOY_BRANCH
+          mkdir -p ../public
+          cp -rf public/CNAME ../public
 
       - name: Install dependencies
         run: |
           npm install hexo-cli -g
           npm install --force
-          nvm use ${{ matrix.node_version }}
-          echo "##$$%%"
 
-      - name: Deploy
+      - name: Deploy Generate
         run: |
-          CurrentTimestampe=`date '+%Y%m%d_%H%M%S'`
-          cd docs
-          git checkout -b $CurrentTimestampe v0
-          cd ..
           hexo clean
           hexo d
-          cp -rf public/* doc
-          cd docs
+          cp -rf public/* ../public
+          git checkout .
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: release
+
+      - name: Deploy Show
+        run: |
+          CurrentTimestampe=`date '+%Y%m%d_%H%M%S'`
+          git checkout -b $CurrentTimestampe $DEPLOY_BRANCH
+          git rm -r *
+          cp -rf ../public/* .
           git add .
           git commit -m "Github Action Trigger in $CurrentTimestampe"
-          # git checkout release
-          # git push github release
-          git rebase -i release $CurrentTimestampe
-          git checkout release
-          git push github release
-
-          cd ..
-          git worktree remove docs
+          git checkout $DEPLOY_BRANCH
+          git merge $CurrentTimestampe
+          git push origin $DEPLOY_BRANCH
