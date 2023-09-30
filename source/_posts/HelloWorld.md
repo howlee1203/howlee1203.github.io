@@ -91,6 +91,27 @@ Githug Page页面相对简单，主要注意两点：
 
 *注6：域名解析设置参考[这篇博文](https://segmentfault.com/a/1190000011203711)*
 
-## 后续计划
+## 关于Github Action
 
-+ 基于NAS搭建个人博客网站，域名备案
+考虑到基于NAS搭建个人博客网站需要做域名备案，且部署涉及到个人IP的安全问题，因此暂不做考虑。这里主要用Github Action来做自动部署。
+
+这里只介绍大体思路，实现细节可以参考`master`分支下的`.github/workflows/deploy.yml`，以及[Github Action官方文档](https://docs.github.com/en/actions)。
+
+- 核心思路：选择两分支分别作为代码分支以及发布页面分支
+  - `master`分支：代码分支，文档编辑以及本地发布
+  - `release`分支：发布页面分支，这里`/(root)`作为Page页面
+  - workflows思路：
+    - 环境准备：
+      - 切换`master`分支
+      - 安装`node`, `hexo`
+      - git配置`user.name`, `user.email`, `ssh key`
+      - 新建`../public`目录作为暂时页面存放目录
+    - 页面生成：
+      - 基于`hexo`命令生成页面
+      - 转移页面目录到`../public`
+    - 环境准备：
+      - 切换`release`分支
+    - 页面发布：
+      - 打时间戳，切临时分支
+      - 清空当前目录并复制目录`../public`内容
+      - 提交修改，并合入`release`分支
