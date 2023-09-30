@@ -4,6 +4,50 @@
   
   
   <entry>
+    <title>人生的方法论：复盘</title>
+    <link href="/2023/09/30/%E4%BA%BA%E7%94%9F%E7%9A%84%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%9A%E5%A4%8D%E7%9B%98/"/>
+    <url>/2023/09/30/%E4%BA%BA%E7%94%9F%E7%9A%84%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%9A%E5%A4%8D%E7%9B%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="人生的方法论：复盘"><a href="#人生的方法论：复盘" class="headerlink" title="人生的方法论：复盘"></a>人生的方法论：复盘</h1><p>复盘有两种方法：情境重现法和关键点法。</p><ul><li>最原始使用的是情境重现法，将做过的事情重新演练一遍，但是这个方法有个缺点，容易受时间和空间的限制。</li><li>关键点法即围绕关键因素进行重现，思考和推演。</li></ul><p>复盘的步骤就是：做完一件事情，回顾一下目标，和现在的结果比对一下，没做好的地方进行反思，找出原因去改进；做的好的地方，固化成流程，执行下去；总结出规律，做成案例归档，供日后学习。</p><p><strong>复盘是一个不断学习、总结、反思、提炼和持续提高的过程</strong></p><p>复盘可以基于GRAI来进行梳理：</p><ul><li>Goal: 目标回顾</li><li>Result: 结果陈述</li><li>Analysis: 过程分析</li><li>Insight：归类总结</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>方法论</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>WSL2 Ubuntu2004 ROS环境配置</title>
+    <link href="/2023/09/30/WSL2-Ubuntu2004-ROS%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <url>/2023/09/30/WSL2-Ubuntu2004-ROS%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="WSL2-Ubuntu2004环境配置"><a href="#WSL2-Ubuntu2004环境配置" class="headerlink" title="WSL2 Ubuntu2004环境配置"></a>WSL2 Ubuntu2004环境配置</h1><h2 id="WSL2-ubuntu20-04-LTS安装"><a href="#WSL2-ubuntu20-04-LTS安装" class="headerlink" title="WSL2&#x2F;ubuntu20.04 LTS安装"></a>WSL2&#x2F;ubuntu20.04 LTS安装</h2><p>这个部分网上教程很多，本文不展开介绍。可以参考<a href="https://zhuanlan.zhihu.com/p/337104547">这篇文章</a>。</p><h2 id="ROS环境搭建"><a href="#ROS环境搭建" class="headerlink" title="ROS环境搭建"></a>ROS环境搭建</h2><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><ol><li><p>保持原始源：<code>sudo cp /etc/apt/sources.list /etc/apt/sources_origin.list</code></p></li><li><p>填充新源：<code>sudo vim /etc/apt/sources.list</code></p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse<br>deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse<br>deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse<br>deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse<br>deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse<br>deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse<br>deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse<br>deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse<br>deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse<br>deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse<br></code></pre></td></tr></table></figure><ol start="3"><li>升级&amp;更新：<code>sudo apt update</code>, <code>sudo apt upgrade</code></li></ol><p><em>注：如果在upgrade时遇到 <strong>unmet dependencies</strong> 的问题，可以尝试：<code>sudo apt remove ubuntu-advantage-tools</code></em></p><h3 id="ROS安装"><a href="#ROS安装" class="headerlink" title="ROS安装"></a>ROS安装</h3><ol><li>添加ROS包的清华镜像源：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo sh -c <span class="hljs-string">&#x27;. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span><br></code></pre></td></tr></table></figure></li><li>设置秘钥: 需要先安装<code>curl</code>(<code>sudo apt install curl</code>)</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -<br></code></pre></td></tr></table></figure><p>或者输入现成的秘钥：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-key adv --keyserver <span class="hljs-string">&#x27;hkp://keyserver.ubuntu.com:80&#x27;</span> --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654<br></code></pre></td></tr></table></figure><ol start="3"><li><p>升级&amp;更新：<code>sudo apt update</code>, <code>sudo apt upgrade</code></p></li><li><p>安装ROS: <code>sudo apt install ros-noetic-desktop-full</code></p></li></ol><h2 id="oh-my-zsh环境配置"><a href="#oh-my-zsh环境配置" class="headerlink" title="oh-my-zsh环境配置"></a>oh-my-zsh环境配置</h2><ol><li><p>download oh-my-zsh from github: <code>git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</code></p></li><li><p>copy .zshrc: <code>cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</code></p></li><li><p>change your shell: <code>chsh -s /bin/zsh</code></p></li><li><p>restart wsl2</p></li><li><p>add plugins zsh-syntax-highlighting</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://gitee.com/lightnear/zsh-syntax-highlighting.git <span class="hljs-variable">$ZSH_CUSTOM</span>/plugins/zsh-syntax-highlighting<br></code></pre></td></tr></table></figure><ol start="6"><li>add plugins zsh-autosuggestions</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://gitee.com/kvdesign/zsh-autosuggestions.git <span class="hljs-variable">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>env</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>WSL2,ROS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>盘古开天辟地</title>
     <link href="/2023/08/19/HelloWorld/"/>
     <url>/2023/08/19/HelloWorld/</url>
@@ -20,7 +64,7 @@
     
     <tags>
       
-      <tag>hexo,fluid,dns</tag>
+      <tag>Hexo,Fluid,DNS</tag>
       
     </tags>
     
