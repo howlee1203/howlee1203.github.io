@@ -2,9 +2,10 @@
 title: WSL2 Ubuntu2004 ROS环境配置
 date: 2023-09-30 16:54:41
 tags: 
-- WSL2,ROS
+- WSL2
+- ROS
 categories:
-- env
+- Env
 ---
 
 # WSL2 Ubuntu2004环境配置

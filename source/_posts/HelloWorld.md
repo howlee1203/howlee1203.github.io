@@ -2,9 +2,11 @@
 title: 盘古开天辟地
 date: 2023-08-19 15:05:31
 tags:
-- Hexo,Fluid,DNS
+- Hexo
+- Fluid
+- DNS
 categories:
-- web
+- Web
 ---
 
 # Hello, world！

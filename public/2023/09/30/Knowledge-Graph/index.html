@@ -1,0 +1,1252 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="how.lee">
+  <meta name="keywords" content="isp">
+  
+    <meta name="description" content="一个图像算法工程师的知识图谱：持续更新中 编程基础 图像基础 镜头选型 Sensor选型 典型 ISP Pipeline 典型 ISP IP 推荐读物   参考链接 Python教程 CMake教程 Matlab教程 CUDA教程 Git教程 Doxygen教程 Docker教程 OpenCV教程 ROS&#x2F;Catkin教程 设计模式       一个图像算法工程师的知识图谱：持续更新中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Knowledge Graph">
+<meta property="og:url" content="https://howlee1203.github.io/2023/09/30/Knowledge-Graph/index.html">
+<meta property="og:site_name" content="FreezingFire">
+<meta property="og:description" content="一个图像算法工程师的知识图谱：持续更新中 编程基础 图像基础 镜头选型 Sensor选型 典型 ISP Pipeline 典型 ISP IP 推荐读物   参考链接 Python教程 CMake教程 Matlab教程 CUDA教程 Git教程 Doxygen教程 Docker教程 OpenCV教程 ROS&#x2F;Catkin教程 设计模式       一个图像算法工程师的知识图谱：持续更新中">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-09-30T09:53:29.000Z">
+<meta property="article:modified_time" content="2023-11-11T08:14:59.868Z">
+<meta property="article:author" content="how.lee">
+<meta property="article:tag" content="Summary">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Knowledge Graph - FreezingFire</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"howlee1203.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"o5i4XDEsIQCnT83ZyqT2di58-gzGzoHsz","app_key":"qAw0rr6h4QO55Janh0O67ZMD","server_url":"https://o5i4xdes.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>晴岚世界史</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Knowledge Graph"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-30 17:53" pubdate>
+          September 30, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          30 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Knowledge Graph</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <ul>
+<li><a href="#%E4%B8%80%E4%B8%AA%E5%9B%BE%E5%83%8F%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD">一个图像算法工程师的知识图谱：持续更新中</a><ul>
+<li><a href="#%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80">编程基础</a></li>
+<li><a href="#%E5%9B%BE%E5%83%8F%E5%9F%BA%E7%A1%80">图像基础</a><ul>
+<li><a href="#%E9%95%9C%E5%A4%B4%E9%80%89%E5%9E%8B">镜头选型</a></li>
+<li><a href="#sensor%E9%80%89%E5%9E%8B">Sensor选型</a></li>
+<li><a href="#%E5%85%B8%E5%9E%8B-isp-pipeline">典型 ISP Pipeline</a></li>
+<li><a href="#%E5%85%B8%E5%9E%8B-isp-ip">典型 ISP IP</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E8%AF%BB%E7%89%A9">推荐读物</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a><ul>
+<li><a href="#python%E6%95%99%E7%A8%8B">Python教程</a></li>
+<li><a href="#cmake%E6%95%99%E7%A8%8B">CMake教程</a></li>
+<li><a href="#matlab%E6%95%99%E7%A8%8B">Matlab教程</a></li>
+<li><a href="#cuda%E6%95%99%E7%A8%8B">CUDA教程</a></li>
+<li><a href="#git%E6%95%99%E7%A8%8B">Git教程</a></li>
+<li><a href="#doxygen%E6%95%99%E7%A8%8B">Doxygen教程</a></li>
+<li><a href="#docker%E6%95%99%E7%A8%8B">Docker教程</a></li>
+<li><a href="#opencv%E6%95%99%E7%A8%8B">OpenCV教程</a></li>
+<li><a href="#roscatkin%E6%95%99%E7%A8%8B">ROS&#x2F;Catkin教程</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="一个图像算法工程师的知识图谱：持续更新中"><a href="#一个图像算法工程师的知识图谱：持续更新中" class="headerlink" title="一个图像算法工程师的知识图谱：持续更新中"></a>一个图像算法工程师的知识图谱：持续更新中</h1><p>本文旨在对个人过往的工作经验做一个复盘，整理出一份 <strong>图像算法工程师的知识图谱</strong> 。利于后续的温故知新与查漏补缺。同时广而告之，便于和同行间进行交流。</p>
+<hr>
+<h2 id="编程基础"><a href="#编程基础" class="headerlink" title="编程基础"></a>编程基础</h2><p>图像算法工程师作为码农的一个分支，对于编程能力也有着相当的要求。而当今不同的岗位需求对于图像算法工程师也有着截然不同的能力要求。基于笔者有限的工作经验，对于移动端的图像算法所需的基础编程能力做简单的的梳理。</p>
+<table>
+<thead>
+<tr>
+<th>基础能力</th>
+<th>基础技能</th>
+<th>学习途径</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>系统平台</td>
+<td>Unix</td>
+<td><a href="#unix%E6%95%99%E7%A8%8B">Unix教程</a></td>
+<td>Ubuntu&#x2F;WSL2</td>
+</tr>
+<tr>
+<td></td>
+<td>Windows</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Android</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>IOS</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>编程语言</td>
+<td>C&#x2F;C++</td>
+<td><a href="#cc%E6%95%99%E7%A8%8B">C&#x2F;C++教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Python</td>
+<td><a href="#python%E6%95%99%E7%A8%8B">Python教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Matlab</td>
+<td><a href="#matlab%E6%95%99%E7%A8%8B">Matlab教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>CUDA</td>
+<td><a href="#cuda%E6%95%99%E7%A8%8B">CUDA教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>CMake</td>
+<td><a href="#cmake%E6%95%99%E7%A8%8B">CMake教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td>代码管理</td>
+<td>Git</td>
+<td><a href="#git%E6%95%99%E7%A8%8B">Git教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Repo</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Gerrit</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>编程文档</td>
+<td>Markdown</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Doxygen</td>
+<td><a href="#doxygen%E6%95%99%E7%A8%8B">Doxygen教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>LaTex</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>编程思想</td>
+<td>DesignPattern</td>
+<td><a href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>代码重构</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>编程工具</td>
+<td>VSCode</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>OpenCV</td>
+<td><a href="#opencv%E6%95%99%E7%A8%8B">OpenCV教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>ROS</td>
+<td><a href="#roscatkin%E6%95%99%E7%A8%8B">ROS&#x2F;Catkin教程</a></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>V4l2</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>GStream</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Docker</td>
+<td><a href="#docker%E6%95%99%E7%A8%8B">Docker教程</a></td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p>基于上述编程基础能力，应该能独自进行图像算法开发，输出满足以下要求的算法代码&#x2F;功能：</p>
+<ul>
+<li>具有一定的兼容能力：<ul>
+<li>兼容不同操作系统：windows|linux|macOS etc.</li>
+<li>兼容不同的指令架构：x86|x64|arm etc.</li>
+<li>兼容不同调试版本：release|debug etc.</li>
+</ul>
+</li>
+<li>具有一定的版本管理能力：<ul>
+<li>版本定位：Change Id|Commit Id|Git Tag|Build Time etc.</li>
+<li>版本发布说明：Release Note etc.</li>
+<li>使用说明文档：ReadMe.md|<code>xxx -help</code> etc.</li>
+</ul>
+</li>
+<li>具有一定的日志能力（LOG系统）：<ul>
+<li>不同等级Log：Fatal|Error|Warning|Info|Debug etc.</li>
+<li>输出不同位置：CMD终端|文本文件|CSV文件 etc.</li>
+</ul>
+</li>
+<li>具有一定的模块化能力：<ul>
+<li>模块满足： <strong>高内聚低耦合</strong></li>
+<li>注释模块：简单代码自注释，复杂代码有详细流程注释，支持 <strong>Doxygen</strong></li>
+<li>测试模块：具有合格的单元测试能力，以及相应的批处理（shell|python调用）</li>
+</ul>
+</li>
+<li>具有一定的工程应用能力：<ul>
+<li>算力：常驻，峰值</li>
+<li>内存：常驻，峰值</li>
+<li>耗时：常驻，峰值</li>
+<li>功耗：常驻，峰值</li>
+<li>依赖性：依赖库尽量少</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="图像基础"><a href="#图像基础" class="headerlink" title="图像基础"></a>图像基础</h2><table>
+<thead>
+<tr>
+<th>基本单元</th>
+<th>子模块&#x2F;参数</th>
+<th>学习途径</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>相机模组</td>
+<td>Cover Glass</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Lens</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>COMS sensor</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>ISP&#x2F;DSP</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>FPC</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Lens</td>
+<td>清晰度MTF</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>光圈</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>景深</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>畸变</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>杂散光</td>
+<td>—</td>
+<td>ghost&#x2F;flare&#x2F;射线杂光&#x2F;ASAP</td>
+</tr>
+<tr>
+<td>CMOS Sensor</td>
+<td>pixel size</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>active pixels</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>color filter array</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>sensitivity</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>dynamic range</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>SNR</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Image Sensor Processing</td>
+<td>AEC&#x2F;AEDC&#x2F;AWB&#x2F;AF</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>BLC&#x2F;BPC&#x2F;FPNC</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Raw NR</td>
+<td>—</td>
+<td>Noise Profile</td>
+</tr>
+<tr>
+<td></td>
+<td>Lens Shading Correction</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Demosaic</td>
+<td>—</td>
+<td>RGGB&#x2F;RCCB</td>
+</tr>
+<tr>
+<td></td>
+<td>CCM</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>TMO</td>
+<td>—</td>
+<td>alaw</td>
+</tr>
+<tr>
+<td>量产用视觉检测方案</td>
+<td>清晰度算法方案</td>
+<td>—</td>
+<td>ISO12233</td>
+</tr>
+<tr>
+<td></td>
+<td>脏污检测方案</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>高低照度方案</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>Shading标定方案</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>补光检测方案</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<h3 id="镜头选型"><a href="#镜头选型" class="headerlink" title="镜头选型"></a>镜头选型</h3><ul>
+<li>MIC(Max Image Circle)|FOV|lens架构</li>
+<li>lens list</li>
+<li>MIC|EFL|F&#x2F;#</li>
+<li>确认CRA|barrel diameter|景深</li>
+<li>样品性能确认，holder确认</li>
+<li>杂光确认</li>
+<li>轴向视点|FOV确认</li>
+</ul>
+<h3 id="Sensor选型"><a href="#Sensor选型" class="headerlink" title="Sensor选型"></a>Sensor选型</h3><ul>
+<li>optical format</li>
+<li>active pixels</li>
+<li>pixel size</li>
+<li>color filter array</li>
+<li>chief ray angle: fill factor|micro-lens</li>
+<li>FSI|BSI|stacked BSI</li>
+<li>Conversion gain|full well charge</li>
+<li>rolling shutter|global shutter</li>
+<li>responsivity|sensitivity</li>
+<li>SNR</li>
+<li>Noise</li>
+<li>Dynamic Range</li>
+<li>Black Level</li>
+</ul>
+<h3 id="典型-ISP-Pipeline"><a href="#典型-ISP-Pipeline" class="headerlink" title="典型 ISP Pipeline"></a>典型 ISP Pipeline</h3><p>slin -&gt; bpc -&gt; blc -&gt; rdns -&gt; rhdr -&gt; lsc -&gt; wbc -&gt; demosaic -&gt; ccm -&gt; gamma -&gt; gtm -&gt; csc(rgb2yuv) -&gt; cfc(yuv444 -&gt; yuv422 -&gt; yuv420)</p>
+<ul>
+<li>slin: 分段线性化，采用两个gamma（8个点和256个点）串联</li>
+<li>bpc：坏点校正</li>
+<li>blc：黑电平校正</li>
+<li>rdns：raw域降噪</li>
+<li>rhdr：raw域HDR</li>
+<li>lsc：lens shading correction</li>
+<li>wbc：白平衡校正</li>
+<li>demosaic：去马赛克</li>
+<li>ccm：颜色校正</li>
+<li>gamma：亮度域转变</li>
+<li>gtm：global tone mapping</li>
+</ul>
+<h3 id="典型-ISP-IP"><a href="#典型-ISP-IP" class="headerlink" title="典型 ISP IP"></a>典型 ISP IP</h3><p>LSC：要考虑效果，算力（定点化，计算量优化）等</p>
+<ul>
+<li>求当前pixel距离光心的xy方向偏移量</li>
+<li>归一化，1&#x2F;r &#x3D; (1+frac) * 1 &gt;&gt; (15-exp)</li>
+<li>旋转校正</li>
+<li>椭圆伸缩变换校正</li>
+<li>求欧式距离平方</li>
+<li>33个点插值求gain</li>
+</ul>
+<h3 id="推荐读物"><a href="#推荐读物" class="headerlink" title="推荐读物"></a>推荐读物</h3><ul>
+<li><p>RS: rolling shutter imaging on the electric grid from two rolling shutters to one global shutter</p>
+</li>
+<li><p>mipi:mipi-csi-2 spectification</p>
+</li>
+<li><p>智能CMOS图像传感器与应用</p>
+</li>
+<li><p>image sensor and signal processing for digital still cameras</p>
+</li>
+<li><p>ISO12233</p>
+</li>
+<li><p>EMVA1288</p>
+</li>
+<li><p>exposure fusion:a simple and practical alternative to high dynmaic range photograph</p>
+</li>
+<li><p>NR: drunet|edvr|mctf|vmctf</p>
+<ul>
+<li>review:a comprehensive comparision of multi-dimensional image denoising methods</li>
+<li>fastdvd</li>
+<li>vnlnet</li>
+<li>edvr</li>
+<li>a brief review of real world color image denoising</li>
+<li>benchmarking denoising algorithms with real photographs</li>
+<li>unprocessing images for learned raw denoising</li>
+</ul>
+</li>
+<li><p>暗光增强</p>
+<ul>
+<li>LLE</li>
+<li>STAR</li>
+<li>LLIM</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><span id="unix教程">Unix教程:</span></p>
+<ol>
+<li><a href="www.info.ee.surrey.ac.uk/Teaching/Unix/">Linux beginner</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-tutorial.html">菜鸟Linux教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell.html">菜鸟Shell教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2020/12/ssh-tutorial.html">博客：阮老师的SSH入门</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/iggredible/Learn-Vim">Github: Learn Vim</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/along21/p/10366886.html">博客：文本三剑客教程</a></li>
+</ol>
+<p><span id="cc教程">C&#x2F;C++教程:</span></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://cplusplus.com/doc/tutorial/">C++ Language(C++ 11)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/applenob/Cpp_Primer_Practice">《C++ Primer 中文版（第 5 版）》学习仓库</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh-google-styleguide.readthedocs.io/en/latest/">Google 开源项目风格指南——中文版</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.tutorialspoint.com/compile_cpp_online.php">Online C++ Compiler</a></li>
+<li><a target="_blank" rel="noopener" href="https://google.github.io/googletest/primer.html">GoogleTest Primer</a></li>
+</ol>
+<h3 id="Python教程"><a href="#Python教程" class="headerlink" title="Python教程"></a>Python教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-tutorial.html">菜鸟Python3教程</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.pythondoc.com/pythontutorial3/index.html">Python官方入门指南（中文）</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.17study.com.cn/2018/12/18/python3-lesson1/">从零开始学习PYTHON3讲义</a></li>
+</ol>
+<h3 id="CMake教程"><a href="#CMake教程" class="headerlink" title="CMake教程"></a>CMake教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake Tutorial</a></li>
+<li><a target="_blank" rel="noopener" href="https://cliutils.gitlab.io/modern-cmake/">An Introduction to Modern CMake</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/foohack/p/3939506.html">博客：CMake编译目标</a></li>
+</ol>
+<h3 id="Matlab教程"><a href="#Matlab教程" class="headerlink" title="Matlab教程"></a>Matlab教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.cainiaojc.com/matlab/matlab-tutorial.html">菜鸟Matlab教程</a></li>
+</ol>
+<h3 id="CUDA教程"><a href="#CUDA教程" class="headerlink" title="CUDA教程"></a>CUDA教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1803649">博客：一文详解OpenCV中的CUDA模块</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34587739">博客：CUDA编程入门极简教程</a></li>
+</ol>
+<h3 id="Git教程"><a href="#Git教程" class="headerlink" title="Git教程"></a>Git教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-tutorial.html">菜鸟Git教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">博客：廖雪峰Git教程</a></li>
+</ol>
+<h3 id="Doxygen教程"><a href="#Doxygen教程" class="headerlink" title="Doxygen教程"></a>Doxygen教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.doxygen.nl/manual/starting.html">Doxygen Manual</a></li>
+</ol>
+<h3 id="Docker教程"><a href="#Docker教程" class="headerlink" title="Docker教程"></a>Docker教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-hello-world.html">菜鸟Docker教程</a></li>
+</ol>
+<h3 id="OpenCV教程"><a href="#OpenCV教程" class="headerlink" title="OpenCV教程"></a>OpenCV教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://docs.opencv.org/4.x/">OpenCV</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/s15810751918/article/details/107705387">博客：linux下编译安装</a></li>
+</ol>
+<h3 id="ROS-Catkin教程"><a href="#ROS-Catkin教程" class="headerlink" title="ROS&#x2F;Catkin教程"></a>ROS&#x2F;Catkin教程</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://wiki.ros.org/cn/ROS/Tutorials">ROS教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.ros.org/ROS/Tutorials">ROS Tutorials</a></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.ros.org/catkin/Tutorials">Catkin Tutorials</a></li>
+<li><a target="_blank" rel="noopener" href="https://catkin-tools.readthedocs.io/en/latest/">Catkin Command Line Tools</a></li>
+<li><a target="_blank" rel="noopener" href="http://wiki.ros.org/image_view#image_view.2BAC8-diamondback.video_recorder">image_view</a></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.ros.org/cn/roslaunch/Tutorials/Roslaunch%20tips%20for%20larger%20projects">Roslaunch在大型项目中的使用技巧</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ncnynl.com/archives/201701/1273.html">博客：ROS&#x2F;C++入门教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://songapore.gitbook.io/ros-tutorials/">博客：ROS教程</a></li>
+</ol>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/design-pattern/design-pattern-tutorial.html">菜鸟设计模式教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://c.biancheng.net/design_pattern/">博客：Java设计模式</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhulao.gitee.io/blog/2019/03/31/23%E7%A7%8D%E7%BB%8F%E5%85%B8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(%E9%99%84c++%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81)/index.html">博客：23种经典设计模式(附c++实现代码)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/liu-jianhao/Cpp-Design-Patterns">Github:Cpp-Design-Patterns(liu-jianhao)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jaredtao/DesignPattern">Github:Design Pattern(jaredtao)</a></li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Summary/" class="print-no-link">#Summary</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Knowledge Graph</div>
+      <div>https://howlee1203.github.io/2023/09/30/Knowledge-Graph/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>how.lee</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 30, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/30/%E4%BA%BA%E7%94%9F%E7%9A%84%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%9A%E5%A4%8D%E7%9B%98/" title="人生的方法论：复盘">
+                        <span class="hidden-mobile">人生的方法论：复盘</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"o5i4XDEsIQCnT83ZyqT2di58-gzGzoHsz","appKey":"qAw0rr6h4QO55Janh0O67ZMD","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        Total visits: 
+        <span id="leancloud-site-pv"></span>
+        
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        Total visitors: 
+        <span id="leancloud-site-uv"></span>
+        
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

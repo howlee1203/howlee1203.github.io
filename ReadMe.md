@@ -1,3 +1,3 @@
-# 项目介绍
+# howlee's blog
 
-这主要是一个基于github page+fluid的[blog](howlee.cn)。
+这主要是一个基于github page+fluid的[blog](https://howlee.cn/)。
